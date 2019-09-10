@@ -22,7 +22,11 @@ class GetTopPlayer:
 
         top_players = []
 
-        df = df[['Name', 'G', 'TRB', 'AST', 'PTS/G']]
+        team = f'{self.team_html.title()}'
+
+        df['Team'] = team
+
+        df = df[['Name', 'Team', 'G', 'TRB', 'AST', 'PTS/G']]
 
         df = df.loc[df['G'] >= 45]
 
